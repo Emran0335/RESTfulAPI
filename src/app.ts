@@ -1,4 +1,5 @@
 import express from "express";
+const path = require('path');
 import { healthRouter, calculatorRouter } from "./routers";
 import { addTimestamp, errorHandler, logger } from "./middlewares";
 
@@ -19,8 +20,12 @@ app.use("/calculator", calculatorRouter);
 // after the middlewares
 app.use(errorHandler);
 
+
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+
 
 // npx means node package execution
